@@ -21,4 +21,5 @@ urlpatterns = [
     path('rooms/',include('chatapp.urls')),
     path('login/',views.login_view,name="login"),
     path('signup/',views.signup_view,name="signup"),
+    path('create_room/',views.create_room,name="create_room"),
 ]

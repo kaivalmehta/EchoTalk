@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 class ChatRoom(models.Model):
     name= models.CharField(max_length=100)
     slug= models.SlugField(unique=True)
+    creator = models.ForeignKey(User, on_delete=models.CASCADE, default=User.objects.first().id)
+    
 
 class ChatMessage(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
